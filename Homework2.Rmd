@@ -1,0 +1,33 @@
+---
+title: "Homework2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(magrittr)
+```
+
+
+```{r}
+gapdf <- read.csv("gapminder-5060.csv", TRUE, ",")
+head(gapdf)
+```
+
+```{r, echo=FALSE}
+canada <- gapdf[gapdf$country == "Canada", ]
+canada %>%
+  ggplot(aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() + geom_line()
+```
+
+
+```{r, echo=TRUE}
+canada_fixed <- canada %>% mutate(
+  lifeExp = replace(lifeExp, year==1957, 69.96)
+)
+head(canada_fixed)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
