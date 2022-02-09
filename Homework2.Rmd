@@ -37,3 +37,10 @@ US %>%
   ggplot(aes(x = lifeExp, y = gdpPercap)) +
   geom_point() + geom_line()
 ```
+
+```{r}
+AUS <- gapdf[gapdf$country == "Australia", ]
+AUS %>%
+  ggplot(aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() + geom_line()
+```
