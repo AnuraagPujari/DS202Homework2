@@ -1,6 +1,6 @@
 ---
 title: "Homework2"
-author: "Akash Setti"
+author: "Akash Setti, Anuraag Pujari, Gauthaman Sethupathy, Siddarthan Prakash"
 date: "2/9/2022"
 output:
   html_document: default
@@ -47,4 +47,10 @@ AUS <- gapdf[gapdf$country == "Australia", ]
 AUS %>%
   ggplot(aes(x = lifeExp, y = gdpPercap)) +
   geom_point() + geom_line()
+```
+```{r}
+canada_fixed %>%
+ggplot(aes(x = lifeExp, y = gdpPercap, group = country)) + geom_line() +
+geom_line(data = gapdf %>%
+            filter(country %in% c("United States", "Australia")))
 ```
