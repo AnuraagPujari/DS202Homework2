@@ -1,6 +1,10 @@
 ---
 title: "Homework2"
-output: html_document
+author: "Akash Setti"
+date: "2/9/2022"
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
